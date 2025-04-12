@@ -1,4 +1,4 @@
-# Guide to Bitz Miner CLI on Eclipse
+# Guide to Bitz Miner CLI on Eclipse using MacOS
 
 ## What is Bitz?
 - The first ePOW commodity token that anyone can mine on Eclipse.
@@ -20,9 +20,9 @@
 ## Install Dependecies
 **1. Install Packages**
 ```bash
-sudo apt-get update && sudo apt-get upgrade -y
+brew update && brew upgrade
 
-sudo apt install screen curl nano  -y
+brew install screen curl nano
 ```
 **2. Install Rust**
 ```bash
@@ -42,8 +42,8 @@ solana --version
 ```
 * If you get `solana: command not found` RUN :
 ```bash
-echo 'export PATH="/root/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+echo 'export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.zprofile
+source ~/.zprofile
 ```
 ```
 solana --version
@@ -51,7 +51,8 @@ solana --version
 
 **4. Switch RPC**
 ```bash
-solana config set --url https://eclipse.helius-rpc.com/
+solana config set --url https://eclipse.helius-rpc.com
+
 ```
 
 ---
@@ -71,7 +72,7 @@ solana-keygen new
 ```bash
 solana config get
 ```
-* It gives your Keypair path like this: `~/.config/solana/id.json`
+* It gives your Keypair path like this: `/Users/YOURUSERNAME/.config/solana/id.json`
 
 2- Export `Private-key`:
 ```bash
